@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Suitmedia Screening Test</string>
+    <string name="input_name">Masukkan Nama</string>
+    <string name="next">Next</string>
+    <string name="name">Nama :</string>
+    <string name="choose_event">Pilih Event</string>
+    <string name="choose_guest">Pilih Guest</string>
+    <string name="Event">Event</string>
+    <string name="guest">Guest</string>
+    <string name="please_wait">Please Wait</string>
+</resources>
