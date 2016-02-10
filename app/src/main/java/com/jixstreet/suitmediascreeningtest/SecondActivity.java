@@ -18,6 +18,7 @@ public class SecondActivity extends AppCompatActivity {
     private String name;
     private Button eventBtn;
     private Button guestBtn;
+    private int month;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class SecondActivity extends AppCompatActivity {
             }
 
             int date = convertedDate.getDate();
+            month = convertedDate.getMonth();
 
             guestBtn.setText(data.getStringExtra(CommonConstant.NAME));
 
@@ -92,7 +94,20 @@ public class SecondActivity extends AppCompatActivity {
                 textToShow = "iOS";
             }
 
-            Toast.makeText(SecondActivity.this, textToShow, Toast.LENGTH_SHORT).show();
+            String prime = "NOT PRIME";
+
+            if (isPrime(month))
+                prime = "PRIME";
+
+            Toast.makeText(SecondActivity.this, prime, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    boolean isPrime(int n) {
+        for(int i=2;i<n;i++) {
+            if(n%i==0)
+                return false;
+        }
+        return true;
     }
 }
