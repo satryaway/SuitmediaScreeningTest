@@ -80,7 +80,7 @@ public class SecondActivity extends AppCompatActivity {
             }
 
             int date = convertedDate.getDate();
-            month = convertedDate.getMonth();
+            month = convertedDate.getMonth() + 1;
 
             guestBtn.setText(data.getStringExtra(CommonConstant.NAME));
 
@@ -99,15 +99,19 @@ public class SecondActivity extends AppCompatActivity {
             if (isPrime(month))
                 prime = "PRIME";
 
-            Toast.makeText(SecondActivity.this, prime, Toast.LENGTH_SHORT).show();
+            Toast.makeText(SecondActivity.this, month + " is " + prime, Toast.LENGTH_SHORT).show();
         }
     }
 
     boolean isPrime(int n) {
-        for(int i=2;i<n;i++) {
-            if(n%i==0)
-                return false;
+        int j = 2;
+        int result = 0;
+        while (j <= n / 2) {
+            if (n % j == 0) {
+                result = 1;
+            }
+            j++;
         }
-        return true;
+        return result != 1;
     }
 }

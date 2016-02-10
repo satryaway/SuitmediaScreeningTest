@@ -3,8 +3,10 @@ package com.jixstreet.suitmediascreeningtest;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.jixstreet.suitmediascreeningtest.adapters.EventListAdapter;
@@ -28,6 +30,7 @@ public class EventsActivity extends AppCompatActivity {
 
     private void initUI() {
         setContentView(R.layout.activity_events);
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         eventList = Seeder.getEvents();
 
@@ -44,6 +47,13 @@ public class EventsActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.putExtra(CommonConstant.EVENT, eventList.get(position).getName());
                 setResult(RESULT_OK, intent);
+                finish();
+            }
+        });
+
+        findViewById(R.id.back_iv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 finish();
             }
         });
