@@ -8,4 +8,7 @@
     <string name="Event">Event</string>
     <string name="guest">Guest</string>
     <string name="please_wait">Please Wait</string>
+    <string name="welcome">Selamat Datang!</string>
+    <string name="insert_picture">Sertakan gambar profil Anda untuk melengkapi profil</string>
+    <string name="finish">Selesai</string>
 </resources>
